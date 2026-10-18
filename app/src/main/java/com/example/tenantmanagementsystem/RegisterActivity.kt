@@ -1,10 +1,11 @@
-package com.example.tendermanagementsystem
+package com.example.tenantmanagementsystem
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tendermanagementsystem.databinding.ActivityRegisterBinding
+import com.example.tenantmanagementsystem.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -12,6 +13,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onCreate")
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,5 +41,36 @@ class RegisterActivity : AppCompatActivity() {
         binding.loginLinkTextView.setOnClickListener {
             finish()
         }
+    }
+
+    // ── LIFECYCLE METHODS (logged so we can watch the order in Logcat) ──
+    override fun onStart() {
+        super.onStart()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("TENANT_LIFECYCLE", "RegisterActivity: onDestroy")
     }
 }

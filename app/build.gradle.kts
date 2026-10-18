@@ -1,15 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
+    // NEW: switch Safe Args on for this app (must be BELOW the android.application line)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
-    namespace = "com.example.tendermanagementsystem"
+    namespace = "com.example.tenantmanagementsystem"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.tendermanagementsystem"
+        applicationId = "com.example.tenantmanagementsystem"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -39,6 +41,8 @@ android {
 }
 
 dependencies {
+    implementation("androidx.navigation:navigation-fragment-ktx:2.9.8")
+    implementation("androidx.navigation:navigation-ui-ktx:2.9.8")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)

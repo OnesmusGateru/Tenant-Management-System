@@ -1,4 +1,4 @@
-package com.example.tendermanagementsystem
+package com.example.tenantmanagementsystem
 
 import org.junit.Test
 
